@@ -4,6 +4,12 @@ buildscript {
         // lifecycle
         lifecycle_version = "2.3.1"
 
+        //retrofit
+        retrofit_version = "2.9.0"
+
+        //okhttp
+        okHttp_version = '4.9.0'
+
         // arch
         arch_version = "2.1.0"
 
