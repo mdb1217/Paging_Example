@@ -1,4 +1,8 @@
 package org.sopt.pagingexample.data.repository
 
-class DogRepository {
+import androidx.paging.PagingData
+import kotlinx.coroutines.flow.Flow
+
+interface DogRepository {
+    fun getDog(path : String): Flow<PagingData<String>>
 }
