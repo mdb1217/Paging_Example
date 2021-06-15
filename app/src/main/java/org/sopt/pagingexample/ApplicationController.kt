@@ -1,10 +1,7 @@
 package org.sopt.pagingexample
 
 import android.app.Application
-import org.sopt.pagingexample.di.networkModule
-import org.sopt.pagingexample.di.remoteDataSourceModule
-import org.sopt.pagingexample.di.repositoryModule
-import org.sopt.pagingexample.di.setUpKoin
+import org.sopt.pagingexample.di.*
 
 class ApplicationController : Application() {
     override fun onCreate() {
@@ -12,7 +9,9 @@ class ApplicationController : Application() {
         setUpKoin(
             this,
             networkModule,
-            remoteDataSourceModule
+            remoteDataSourceModule,
+            repositoryModule,
+            viewModelModule
         )
     }
 }
