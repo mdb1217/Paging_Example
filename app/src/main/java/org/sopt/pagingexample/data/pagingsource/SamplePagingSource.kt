@@ -3,7 +3,6 @@ package org.sopt.pagingexample.data.pagingsource
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import org.sopt.pagingexample.data.remote.api.DogService
-import org.sopt.pagingexample.data.remote.model.ResDogImgList
 import retrofit2.HttpException
 import java.io.IOException
 import org.sopt.pagingexample.data.datasource.RemoteDogDataSource.Companion.NETWORK_PAGE_SIZE
@@ -17,7 +16,6 @@ class SamplePagingSource(private val dogService: DogService, private val query: 
         val pageIndex = params.key ?: DB_STARTING_PAGE_INDEX
         return try {
             // key가 정의되지 않았다면 첫번째 페이지에서 시작한다
-            val nextPageNumber = params.key ?: 1
             val response = dogService.getFollower(query, pageIndex)
             val dogImgList = response.message
             val nextKey =

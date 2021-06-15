@@ -22,6 +22,6 @@ class RemoteDogDataSource(private val service: DogService) : DogDataSource {
     }
 
     companion object {
-        const val NETWORK_PAGE_SIZE = 25
+        const val NETWORK_PAGE_SIZE = 10
     }
 }
