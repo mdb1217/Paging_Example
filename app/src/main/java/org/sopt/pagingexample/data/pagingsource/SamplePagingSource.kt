@@ -9,6 +9,7 @@ import org.sopt.pagingexample.data.datasource.RemoteDogDataSource.Companion.NETW
 
 
 class SamplePagingSource(private val dogService: DogService, private val query: String) : PagingSource<Int, String>() {
+    override val keyReuseSupported = true
 
     override suspend fun load(
         params: LoadParams<Int>
