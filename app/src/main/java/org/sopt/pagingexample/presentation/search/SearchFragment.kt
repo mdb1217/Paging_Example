@@ -37,7 +37,10 @@ class SearchFragment : BaseFragment<FragmentSearchBinding, MainViewModel>() {
 
     private fun initAdapter() {
         binding.rvSearch.adapter = dogListAdapter
-        dogListAdapter.withLoadStateHeaderAndFooter(header = DogLoadStateAdapter(), footer = DogLoadStateAdapter())
+            .withLoadStateHeaderAndFooter(
+            header = DogLoadStateAdapter{ dogListAdapter.retry() },
+            footer = DogLoadStateAdapter{ dogListAdapter.retry() }
+        )
     }
 
     private fun getDog(path : String) {
